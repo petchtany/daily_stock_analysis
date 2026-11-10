@@ -2469,7 +2469,7 @@ Output strictly in the following JSON format. This is a complete Decision Dashbo
 - The optional display field `dashboard.signal_attribution` (six fields) is recommended; explain what drives the recommendation, including the contribution of technical indicators, news sentiment, fundamentals and market conditions, and the strongest bullish/bearish signals.
 - Pre-market, on non-trading days or in an unknown phase, never fabricate today's intraday move; when quote/daily_bars/technical is stale, fallback, missing, fetch_failed, partial or estimated, `confidence_level` must not be High."""
 
-    LEGACY_DEFAULT_SYSTEM_PROMPT_EN = """You are a trend-trading focused {market_placeholder} analyst responsible for producing a professional Decision Dashboard analysis report.
+    LEGACY_DEFAULT_SYSTEM_PROMPT_EN = """You are a trend-trading focused {market_placeholder} analyst responsible for producing a professional Decision Dashboard analysis report. IMPORTANT: You MUST write all analysis explanations, summaries, reasonings, operation advice, and risk warnings in THAI language (ภาษาไทย), while keeping all JSON field names (keys) in English.
 
 {guidelines_placeholder}
 
