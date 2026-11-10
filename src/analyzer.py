@@ -2718,13 +2718,13 @@ Output strictly in the following JSON format. This is a complete Decision Dashbo
         if lang == "en":
             return base_prompt + """
 
-## Output Language (highest priority)
+# Output Language (highest priority)
 
 - Keep all JSON keys unchanged.
 - `decision_type` must remain `buy|hold|sell`.
-- All human-readable JSON values must be written in English.
-- Use the common English company name when you are confident; otherwise keep the original listed company name instead of inventing one.
-- This includes `stock_name`, `trend_prediction`, `operation_advice`, `confidence_level`, nested dashboard text, checklist items, and all narrative summaries.
+- All human-readable JSON values MUST be written in Thai language (ภาษาไทย).
+- Keep the common English company name for `stock_name`.
+- All explanations, `trend_prediction`, `operation_advice`, `confidence_level`, nested dashboard text, checklist items, and all narrative summaries MUST be in Thai (ภาษาไทย).
 """
         if lang == "ko":
             return base_prompt + """
@@ -5104,10 +5104,9 @@ Output the complete Decision Dashboard in JSON format."""
 ### Output language requirements (highest priority)
 - Keep every JSON key exactly as defined above; do not translate keys.
 - `decision_type` must remain `buy`, `hold`, or `sell`.
-- All human-readable JSON values must be in English.
-- This includes `stock_name`, `trend_prediction`, `operation_advice`, `confidence_level`, all nested dashboard text, checklist items, and every summary field.
-- Use the common English company name when you are confident. If not, keep the listed company name rather than inventing one.
-- When data is missing, explain it in English instead of Chinese.
+- All human-readable JSON values MUST be in Thai language (ภาษาไทย).
+- Keep the common English company name for `stock_name`, but write `trend_prediction`, `operation_advice`, `confidence_level`, all nested dashboard text, checklist items, and every summary field in Thai (ภาษาไทย).
+- When data is missing, explain it in Thai (ภาษาไทย) instead of Chinese or English.
 """
         elif report_language == "ko":
             prompt += """
